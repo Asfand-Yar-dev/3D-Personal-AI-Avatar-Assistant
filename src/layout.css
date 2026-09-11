@@ -1,0 +1,103 @@
+/* Core Layout & Responsive Grid */
+
+.app-wrapper {
+  max-width: 1360px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px 28px;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: minmax(420px, 480px) 1fr;
+  gap: 24px;
+  align-items: stretch;
+  flex: 1;
+  margin-top: 20px;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Tablet & Smaller Desktops */
+@media (max-width: 1024px) {
+  .app-main {
+    grid-template-columns: minmax(360px, 420px) 1fr;
+    gap: 18px;
+  }
+  .stage {
+    height: 400px;
+  }
+}
+
+/* Mobile & Single Column View */
+@media (max-width: 880px) {
+  .app-wrapper {
+    padding: 0 16px 20px;
+  }
+
+  .header-badge {
+    display: none;
+  }
+
+  .app-main {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stage {
+    height: 380px;
+  }
+
+  .conversation {
+    min-height: 520px;
+  }
+}
+
+@media (max-width: 600px) {
+  .utility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stage {
+    height: 340px;
+  }
+
+  .conversation-title h2 {
+    font-size: 17px;
+  }
+
+  .composer {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .composer-input {
+    order: -1;
+    width: 100%;
+    flex-basis: 100%;
+  }
+
+  .composer-attach-btn,
+  .composer-listen-btn,
+  .composer-send-btn {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .attach-label,
+  .listen-label {
+    display: inline;
+  }
+}
