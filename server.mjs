@@ -116,5 +116,4 @@ const server = createServer(async (req, res) => {
   });
 });
 
-
 server.listen(port, () => console.log(`Aiden is running locally at http://localhost:${port}`));
